@@ -1,16 +1,27 @@
-//index.js  ----- Tất cả các route
+const express = require('express');
+const router = express.Router();
 
-const newsRouter = require('./news'); //1. news router
-const siteRouter = require('./site'); //2. Home , search, contact
-
+const meRouter = require('./me');
+const productsRouter = require('./products');
+const stuffsRouter = require('./stuffs');
+const medicinesRouter = require('./medicines');
+const newisRouter = require('./newis');
+//const newisRouter = require('./abouts');
+const siteRouter = require('./site');
+const usersRouter = require('./users');
+const adminRouter = require('./admin');
 
 function route(app) {
-    //route
-                                        //4. contact router
-    app.use('/search', siteRouter);     //3. Search router
-    app.use('/news', newsRouter);       //1. news router
-    app.use('/', siteRouter);           //2. Home router, 
-    
+  app.use('/me', meRouter);
+  app.use('/products', productsRouter);
+  app.use('/stuffs', stuffsRouter);
+  app.use('/medicines', medicinesRouter);
+  app.use('/newis', newisRouter);
+  //app.use('/abouts', aboutsRouter);
+  app.use('/users', usersRouter);
+  app.use('/admin', adminRouter);
+  //app.use('/abouts', siteRouter);
+  app.use('/', siteRouter);
 }
 
 module.exports = route;
