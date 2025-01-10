@@ -42,7 +42,7 @@ const hbs = exphbs.create({
     }
 });
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 const route = require('./routes/index');
 const db = require('./config/db'); // Đường dẫn tới file db
